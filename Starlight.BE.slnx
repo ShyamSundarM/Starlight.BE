@@ -1,0 +1,8 @@
+<Solution>
+  <Project Path="Starlight.API/Starlight.API.csproj" />
+  <Project Path="Starlight.DataAccess/Starlight.DataAccess.csproj" />
+  <Project Path="Starlight.Database/Starlight.Database.sqlproj" Id="f9ec24b7-8d1d-4e07-813e-91ee77e4baef">
+    <Build />
+    <Deploy />
+  </Project>
+</Solution>
