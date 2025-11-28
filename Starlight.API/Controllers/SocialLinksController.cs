@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Starlight.DataAccess.Interfaces;
 using Starlight.DataAccess.Models;
@@ -6,6 +6,7 @@ using Starlight.DataAccess.Models;
 namespace Starlight.API.Controllers
 {
     [Route("api/[controller]")]
+    [Authorize]
     [ApiController]
     public class SocialLinksController : ControllerBase
     {
