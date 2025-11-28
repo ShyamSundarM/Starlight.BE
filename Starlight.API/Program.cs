@@ -38,6 +38,7 @@ namespace Starlight.API
 
             builder.Services.AddScoped<IDbContext, DBContext>();
             builder.Services.AddScoped<ISiteRepository, SiteRepository>();
+            builder.Services.AddScoped<ISocialLinksRepository, SocialLinksRepository>();
 
             var app = builder.Build();
             app.UseCors("AllowAll");

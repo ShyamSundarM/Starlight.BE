@@ -13,11 +13,18 @@ namespace Starlight.DataAccess.Repositories
             _dbContext = dbContext;
         }
 
-        public async Task<List<SiteConfigItem>> GetSiteConfigItemsAsync()
+        public async Task<Dictionary<string, SiteConfigItem>> GetSiteConfigItemsAsync()
         {
             try
             {
-                return (await _dbContext.Connection.QueryAsync<SiteConfigItem>("lstSiteConfig", commandType: CommandType.StoredProcedure)).ToList();
+                var data = (await _dbContext.Connection.QueryAsync<SiteConfigItem>("lstSiteConfig", commandType: CommandType.StoredProcedure)).ToList();
+                var dictionary = new Dictionary<string, SiteConfigItem>();
+                foreach (var item in data)
+                {
+                    dictionary[item.Key] = item;
+                }
+
+                return dictionary;
             }
             catch (Exception)
             {
