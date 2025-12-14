@@ -1,0 +1,11 @@
+﻿CREATE PROCEDURE InsPlatforms
+    @Name NVARCHAR(200)
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    INSERT INTO Platforms (Name)
+    VALUES (@Name);
+
+    SELECT SCOPE_IDENTITY() AS NewId;
+END

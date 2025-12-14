@@ -6,4 +6,5 @@ AS
 BEGIN
     INSERT INTO SiteConfig ([Key], [Value], IsActive)
     VALUES (@ConfigKey, @ConfigValue, @IsActive);
+    select @@IDENTITY
 END;

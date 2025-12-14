@@ -40,6 +40,9 @@ namespace Starlight.API
             builder.Services.AddScoped<ISiteRepository, SiteRepository>();
             builder.Services.AddScoped<ISocialLinksRepository, SocialLinksRepository>();
             builder.Services.AddScoped<IAuthRepository, AuthRepository>();
+            builder.Services.AddScoped<IProductsRepository, ProductsRepository>();
+            builder.Services.AddScoped<IBrandsRepository, BrandsRepository>();
+            builder.Services.AddScoped<IPlatformsRepository, PlatformsRepository>();
 
             builder.Services
                 .AddAuthentication(options =>

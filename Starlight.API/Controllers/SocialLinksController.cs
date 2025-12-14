@@ -18,6 +18,7 @@ namespace Starlight.API.Controllers
         }
 
         [HttpGet]
+        [AllowAnonymous]
         public async Task<IActionResult> GetSocialLinks()
         {
             try

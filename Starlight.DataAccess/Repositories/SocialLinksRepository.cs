@@ -39,7 +39,6 @@ namespace Starlight.DataAccess.Repositories
                 parameters.Add("@Name", link.Name, DbType.String);
                 parameters.Add("@Logo", link.Logo, DbType.String);
                 parameters.Add("@Url", link.Url, DbType.String);
-                // assuming stored procedure returns new Id as scalar
                 var id = await _dbContext.Connection.ExecuteScalarAsync<int>("insSocialLink", parameters, commandType: CommandType.StoredProcedure);
                 return id;
             }
