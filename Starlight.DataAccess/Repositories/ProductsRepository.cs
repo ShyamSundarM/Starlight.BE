@@ -1,4 +1,6 @@
-﻿using Dapper;
+﻿using CloudinaryDotNet;
+using CloudinaryDotNet.Actions;
+using Dapper;
 using Starlight.DataAccess.Interfaces;
 using Starlight.DataAccess.Models;
 using System.Data;
@@ -84,6 +86,19 @@ namespace Starlight.DataAccess.Repositories
             try
             {
                 var rows = await _dbContext.Connection.ExecuteAsync("delProductLinks", new { ProductId = productId }, commandType: CommandType.StoredProcedure);
+                return rows;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        public async Task<int> DeleteProductSocialLinks(int productId)
+        {
+            try
+            {
+                var rows = await _dbContext.Connection.ExecuteAsync("delProductSocialLinks", new { ProductId = productId }, commandType: CommandType.StoredProcedure);
                 return rows;
             }
             catch (Exception)

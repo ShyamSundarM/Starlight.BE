@@ -92,5 +92,9 @@
     <Build Include="dbo\Stored Procedures\insBrand.sql" />
     <Build Include="dbo\Stored Procedures\DelPlatforms.sql" />
     <Build Include="dbo\Stored Procedures\delBrand.sql" />
+    <Build Include="dbo\Stored Procedures\updProduct.sql" />
+    <Build Include="dbo\Stored Procedures\delProductSocialLinks.sql" />
+    <Build Include="dbo\Stored Procedures\delProductLinks.sql" />
+    <Build Include="dbo\Stored Procedures\delProduct.sql" />
   </ItemGroup>
 </Project>

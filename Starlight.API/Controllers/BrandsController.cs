@@ -7,6 +7,7 @@ namespace Starlight.API.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
+    [Authorize]
     public class BrandsController : ControllerBase
     {
         private readonly IBrandsRepository _brandsRepository;
@@ -16,6 +17,7 @@ namespace Starlight.API.Controllers
         }
 
         [HttpGet]
+        [AllowAnonymous]
         public async Task<ActionResult<List<Brand>>> Get()
         {
             var brands = await _brandsRepository.GetBrandsAsync();

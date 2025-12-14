@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Starlight.DataAccess.Interfaces;
 using Starlight.DataAccess.Models;
@@ -6,6 +7,7 @@ namespace Starlight.API.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
+    [Authorize]
     public class PlatformsController : ControllerBase
     {
         private readonly IPlatformsRepository _platformsRepository;
@@ -15,6 +17,7 @@ namespace Starlight.API.Controllers
         }
 
         [HttpGet]
+        [AllowAnonymous]
         public async Task<ActionResult<List<Platform>>> Get()
         {
             var platforms = await _platformsRepository.GetPlatformsAsync();

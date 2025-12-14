@@ -10,6 +10,7 @@ namespace Starlight.DataAccess.Interfaces
         Task<int> InsertProductLinks(IEnumerable<ProductLink> links);
         Task UpdateProduct(Product product);
         Task<int> DeleteProductLinks(int productId);
+        Task<int> DeleteProductSocialLinks(int productId);
         Task<int> DeleteProduct(int productId);
     }
 }
